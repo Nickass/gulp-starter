@@ -1,0 +1,17 @@
+{
+  "name": "gulp-starter",
+  "description": "Starter kit often use tasks for dev webapp",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "authors": [
+    "Nickass"
+  ]
+}

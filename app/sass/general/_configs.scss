@@ -1,0 +1,27 @@
+// Global settings for Susy
+$susy: (
+  flow: ltr, // сменить дефолтное навправление колонок
+  math: fluid, // можно использовать static для неадаптивных сайтов
+  output: float, // используйте outside для исправлениях некоторых багов
+  gutter-position: after, // before | inside | after
+  container: auto, // укажите максимальную ширину в любых единицах, например, 60em | auto
+  container-position: center, // center | left | right
+  columns: 12, // количество колонок
+  gutters: 0, // ширина пробельчика для каждой колонки
+  column-width: false, // false | ширина колонки задается только при math: static 
+  box-sizing: border-box, // content box | border box | padding box
+  last-flow: to, // последний элемент в ряду флоатится вправо, можно сменить
+  debug: (
+    image: hide, // варианты: show | hide | show-columns | show-baseline 
+    color: rgba(#66f, .25), // менять цвет у колонок
+    output: background, //  background / overlay / inspect
+    toggle: top right, // положение переключателя для показа оверлея
+  ),
+  use-custom: (
+    background-image: true, // возможность использовать свой миксин background-image
+    background-options: false, // разные background миксины
+    box-sizing: false, // свой миксин box-sizing
+    clearfix: true, // свой миксин clearfix
+    rem: true,
+  )
+);

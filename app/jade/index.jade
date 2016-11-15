@@ -1,0 +1,24 @@
+extends foundation/_index
+
+block titletext
+	|My stylesheet
+
+append topincludes
+
+
+append bodyinner
+	include layout/_header
+	include layout/_center
+	include layout/_sidebar
+	include layout/_footer
+
+append bottomincludes
+	// build:js js/vendor.js
+	// bower:js
+	script(src='../bower_components/jquery/dist/jquery.js')
+	script(src='../bower_components/jquery-ui/jquery-ui.js')
+	// endbower
+	// endbuild
+	// build:js js/common.min.js
+	script(src="js/common.js")
+	// endbuild
