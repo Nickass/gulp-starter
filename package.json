@@ -1,6 +1,6 @@
 {
   "name": "gulp-starter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
@@ -14,7 +14,9 @@
     "file-loader": "^0.9.0",
     "fontmin": "^0.9.6",
     "gulp": "^3.9.1",
+    "gulp-changed": "^1.3.2",
     "gulp-cssnano": "^2.1.2",
+    "gulp-file-assets": "^2.2.3",
     "gulp-iconfont": "^8.0.1",
     "gulp-iconfont-css": "^2.1.0",
     "gulp-if": "^2.0.1",
@@ -24,6 +26,8 @@
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.2.0",
+    "gulp-real-favicon": "^0.2.2",
+    "gulp-rev": "^7.1.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^2.1.1",
     "gulp-uglify": "^2.0.0",
@@ -37,6 +41,17 @@
     "wiredep": "^4.0.0"
   },
   "author": "Nickass",
-  "license": "ISC",
-  "description": "Tasks for use in development front-end"
+  "license": "MIT",
+  "description": "Tasks for use in development front-end",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nickass/gulp-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nickass/gulp-starter/issues"
+  },
+  "homepage": "https://github.com/Nickass/gulp-starter#readme"
 }

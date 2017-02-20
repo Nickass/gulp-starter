@@ -2,7 +2,5 @@
 /node_modules
 /bower_components
 /dist
-/app/css/*
-/app/js/*
-/app/img/*
-/app/font/*
+/dev
+!/dev/template

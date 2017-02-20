@@ -6,7 +6,7 @@ var reload = require('browser-sync').reload;
 var webpackStream = require('webpack-stream');
 var webpack = webpackStream.webpack;
 var gulplog = require('gulplog');
-
+var myPaths = global.myGulpConfigs.myPaths;
 
 let options = {
   output: {
@@ -39,5 +39,5 @@ module.exports.compile = function(){
 }
 
 module.exports.watch = function(){
-  gulp.watch( myPaths.src + myPaths.webpack + '**/*.js', this.compile);
+  gulp.watch( myPaths.src + myPaths.webpack + '**/*', this.compile);
 }

@@ -3,10 +3,11 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var reload = require('browser-sync').reload;
+var myPaths = global.myGulpConfigs.myPaths;
 
 var plugs4PostCss = [
   require('postcss-fontpath')(true),
-  require('autoprefixer')({ cascade: true, browsers: ['> 1%', 'last 2 versions'] }),
+  require('autoprefixer')({ cascade: true, browsers: ['> 1%', 'last 40 versions'] }),
   require('postcss-assets')()
 ];
 
@@ -14,7 +15,7 @@ var plugs4PostCss = [
 
 module.exports.compile = function(){
   gulp.src( myPaths.src + myPaths.sass + '*.scss' )
-  .pipe( $.plumber() )
+  .pipe( $.plumber({errorHandler: $.notify.onError("Error: <%= error.message %>")}) )
   .pipe( $.sourcemaps.init() )
   .pipe( $.sass.sync({
     outputStyle: 'expanded',
@@ -24,9 +25,9 @@ module.exports.compile = function(){
   .pipe( $.postcss( plugs4PostCss ) )
   .pipe( $.sourcemaps.write() )
   .pipe( gulp.dest( myPaths.src + myPaths.css ) )
-  .pipe(reload({stream: true}));
+  .pipe(reload({stream: true}))
 }
 
 module.exports.watch = function(){
-  gulp.watch( myPaths.src + myPaths.sass + '**/*.scss', this.compile);
+  gulp.watch( myPaths.src + myPaths.sass + '**/*', this.compile);
 }

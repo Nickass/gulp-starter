@@ -9,7 +9,10 @@
     "node_modules",
     "bower_components"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "susy": "^2.2.12",
+    "bourbon": "^4.2.7"
+  },
   "devDependencies": {},
   "authors": [
     "Nickass"

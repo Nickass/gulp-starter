@@ -4,7 +4,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var p = require('path');
 const reload = require('browser-sync').reload;
-
+var myPaths = global.myGulpConfigs.myPaths;
 
 /*Normalize path*/
 var pathToImg = p.relative( myPaths.src + myPaths.css, myPaths.src + myPaths.img);
@@ -24,6 +24,7 @@ let options = {
 module.exports.compile = function(){
     var spriteData = 
       gulp.src( myPaths.src + myPaths.iconSprite + '**/*.{png,jpg}' )
+      .pipe($.plumber({errorHandler: $.notify.onError("Error: <%= error.message %>")}))
       .pipe( $.spritesmith( options ) );
  
     spriteData.css.pipe( gulp.dest( myPaths.src + myPaths.sass + '/general/' ) );
@@ -32,5 +33,5 @@ module.exports.compile = function(){
 }
 
 module.exports.watch = function(){
-	gulp.watch( myPaths.src + myPaths.iconSprite + '**/*.{png,jpg}', this.compile);
+	gulp.watch( myPaths.src + myPaths.iconSprite + '**/*', this.compile);
 }

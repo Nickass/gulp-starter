@@ -1,0 +1,11 @@
+- Стили сброса(margin: 0, clearfix,)
+- Стили отображения( display, position );
+- Стили размеров, позиционирования( width, top, left, line-height );
+- Стили отступов( padding, border, margin );
+- Стили шрифтов( text-align, font, text-transform );
+- Стили цветов и графики( color, bg-image, box-shadow );
+- Стили хаки, фиксы ( white-space, margin: -3px, top: 12px);
+- Стили псевдоклассов, псевдоэлементов(:before, nth-child, &+&);
+- Стили состояний( hover, active, focus );
+- Стили связных элементов( &__item, &.center, & > li );
+- Стили медиазапросов;
