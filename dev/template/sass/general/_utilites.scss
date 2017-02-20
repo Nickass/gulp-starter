@@ -1,0 +1,32 @@
+.va-middle{
+	vertical-align: middle;
+}
+
+.ta-center{
+	text-align: center;
+}
+
+.ta-right{
+	text-align: right;
+}
+
+.top-right{
+	position: absolute;
+	top: 0%;
+	right: 0%;
+	margin-right: 2px;
+	margin-top: 2px;
+}
+
+.f-left{
+	float: left;
+}
+.f-right{
+	float: right;
+}
+.clearfix{
+	@include clearfix;
+}
+.centering{
+	@include container;
+}

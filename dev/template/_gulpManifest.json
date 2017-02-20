@@ -1,0 +1,18 @@
+{
+	"tasks":{
+		"sass": 			true,
+		"jade": 			true,
+		"iconfont": 	true,
+		"wiredep": 		{
+			"scss": true,
+			"html": false,
+			"jade": true
+		},
+		"webpack":		false,
+		"iconsprite": false,
+		"favicon": 		{
+		  "color": "#444"
+		}
+	},
+  "proxy": false
+}

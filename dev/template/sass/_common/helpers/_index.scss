@@ -1,0 +1,49 @@
+@import "_clearfix.scss";
+@import "_debug.scss";
+@import "_vertical-rhythm.scss";
+
+@function parseInt($n) {
+    @return $n / ($n * 0 + 1); 
+}
+
+@function px($rem){
+  @if(unit($rem) != 'rem') {@error "Incorrect value for function 'px'!";}
+  @return $em-base * parseInt($rem);
+}
+
+@mixin _define($name){
+  @if(& == null){
+    #{$name}{
+      @content;
+    }
+  }
+  @else{
+    @content;
+  }
+}
+
+// This mixin permit uses modifiers without set class of block in atribute of tag.
+// Этот миксин позволяет использовать модификаторы без установки класса блока в атрибут тега.
+// Нужно пофиксить: Не наследуется класс без свойств.
+@mixin extend($name, $abstract: false, $separator: '--'){
+  $parent: &;
+  @if($abstract == false){
+    @at-root #{$parent + $separator + $name}{
+      @extend #{$parent};
+      @content;
+    }
+  }
+  @if($abstract == true){
+    @at-root #{'.' + $name}{
+      @extend #{$parent};
+      @content;
+    }
+  }
+}
+
+@mixin element($name, $separator: '__'){
+  @at-root #{&+$separator+$name}{
+    @content;
+  }
+}
+

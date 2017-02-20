@@ -1,0 +1,32 @@
+extends extrafiles/_template
+
+include extrafiles/_mixins
+include components/_index
+
+block titletext
+	|My stylesheet
+
+append meta
+
+append favicon
+	include extrafiles/_favicon
+
+append topincludes
+	//- script(src="js/modernizr.js")
+	link(rel="stylesheet",href="css/style.css")
+		
+append bodyinner
+	include extrafiles/_demo
+	
+	include layout/0header/_header
+	include layout/3center/_center
+	include layout/4footer/_footer
+
+append bottomincludes
+	// build:js js/vendor.js
+	// bower:js
+	// endbower
+	// endbuild
+	// build:js js/common.min.js
+	script(src="js/common.js")
+	// endbuild

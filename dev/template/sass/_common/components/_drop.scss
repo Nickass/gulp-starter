@@ -1,0 +1,98 @@
+// Parent must have position:relative/absolute and his must turn on drop...  
+@mixin drop($triange-size: 0, $color: transparent, $margin: 0, $list: down){
+  $size: $triange-size;
+  
+  @include _define('.' + drop){
+    display: none;
+    position: absolute;
+    z-index: 500;
+    @if( $size ){
+      &:before{  // Triangle
+        display: block;
+        position: absolute;
+        border: $size solid transparent;
+        content: '';
+      }
+    }
+    @if( $size && $margin ){
+      border: 0px solid transparent;
+      @if( unit($margin) == '' ){
+        $margin: $size * $margin;
+      }
+    }
+    @each $name in $list{
+
+      @if($name == down){
+        @include extend(down){
+          left: 0%;
+          top: 100%;
+          @if( $margin ){
+            border-top-width: $margin;
+          }
+          @if( $size ){
+            &:before{   // Triangle
+              bottom:100%;
+              left:25%;
+              margin-left: -$size;
+              border-bottom-color: $color;
+            }
+          }
+        }
+      }
+
+      @if($name == left){
+        @include extend(left){
+          top: 0%;
+          right: 100%;
+          @if( $margin ){
+            border-right-width: $margin;
+          }
+          @if( $size ){
+            &:before{
+              top: 25%;
+              left: 100%;
+              margin-top: -$size;
+              border-left-color: $color;
+            }
+          }
+        }
+      }
+
+      @if($name == right){
+        @include extend(right){
+          top: 0%;
+          left: 100%;
+          @if( $margin ){
+            border-left-width: $margin;
+          }
+          @if( $size ){
+            &:before{
+              top:25%;
+              right:100%;
+              margin-top: -$size;
+              border-right-color: $color;
+            }
+          }
+        }
+      }
+
+      @if($name == up){
+        @include extend(up){
+          left: 0%;
+          bottom: 100%;
+          @if( $margin ){
+            border-bottom-width: $margin;
+          }
+          @if( $size ){
+            &:before{
+              top:100%;
+              left:25%;
+              margin-left: -$size;
+              border-top-color: $color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

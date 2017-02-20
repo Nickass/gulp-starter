@@ -1,0 +1,17 @@
+@mixin overlay($pseudo: after, $z: 0){
+  @include _define('.overlay'){
+    &:#{$pseudo}{
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      z-index: $z;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      content: '';
+      border-radius: inherit;
+      @content;
+    }
+  }
+}

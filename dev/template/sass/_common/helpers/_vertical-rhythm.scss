@@ -1,0 +1,21 @@
+@mixin vertical-rhythm($size, $bottom-rows: 2, $top-rows: 0, $use-height: false, $border: 0) {
+  @if(unit($size) == 'rem'){$size: px($size);}
+  @if(unit($border) == 'rem'){$border: px($border)}
+  $size: rem($size);
+  $border: rem($border);
+  $multiplier: ceil($size / $base-line-height);
+
+  @if $use-height {
+    $leftover:      $base-line-height * $multiplier - $size ;
+    height:         $size;
+    margin-top:     $base-line-height * $top-rows + $leftover / 2 ;
+    margin-bottom:  $base-line-height * $bottom-rows + $leftover / 2 ;
+    @if($border != 0){padding-top: ceil($border / $base-line-height) * $base-line-height - $border;}
+  }
+  @else {
+    font-size:      $size;
+    line-height:    $base-line-height * $multiplier;
+    margin-top:     $base-line-height * $top-rows ;
+    margin-bottom:  $base-line-height * $bottom-rows - $border ;
+  }
+}

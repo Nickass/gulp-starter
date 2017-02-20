@@ -1,0 +1,28 @@
+@mixin menu-inline($child: item, $self: menu){
+  @include _define('.' + $self){
+    @include reset_list;
+    font-size: 0; // Hack! Delete space between inline-bloks.
+    text-align: center;
+    
+    @include element($child){
+      position: relative;
+      display: inline-block;
+      width: auto;
+      font-size: 16px;
+      font-size: 1rem;
+    }
+    @content;
+  }
+}
+
+@mixin menu-table($child: item, $self: menu){
+  @include _define('.' + $self){
+    @include reset_list;
+      display: table;
+      width: 100%;
+    @include element($child){
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}

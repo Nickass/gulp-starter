@@ -1,0 +1,22 @@
+{
+  "name": "project",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-scss": "^3.0.3",
+    "susy": "^2.2.12",
+    "bourbon": "^4.3.2"
+  },
+  "devDependencies": {},
+  "authors": [
+    "Nickass"
+  ]
+}

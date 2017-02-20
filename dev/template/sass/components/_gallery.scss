@@ -1,0 +1,7 @@
+.gallery{
+	@include clearfix;
+
+	&__item{
+		@include gallery(4 of 12 1);
+	}
+}

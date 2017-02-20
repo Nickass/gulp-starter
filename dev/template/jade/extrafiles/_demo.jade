@@ -1,0 +1,31 @@
+//
+//###DELETE ME start###
+//
+style
+	|.demo{
+	|	 position: fixed;
+	|	 background: rgba(0,0,0,.5);
+	|	 z-index: 1000;
+	|  top:20%;
+	|}
+	|.demo ul{display:none;padding:0;margin:0;}
+	|.demo li{
+	|  padding: 0.5em 1em;
+	|	 list-style:none;
+	|}
+	|.demo a{color:#fff;}
+	|.demo label{display:inline-block;background-color: rgba(20,20,200,.35);color: #ee9;position:absolute; bottom:100%;left:0;padding:.4em;cursor:pointer;border:1px solid #ee9;padding:0.5em;transition:300ms;}
+	|.demo label:hover{background: #44f;}
+	|.demo input:checked + ul{display:block;}
+.demo
+	- var htmls = _fs.readdirSync(process.env.PWD).filter((str)=>{ return /\.html$/.test(str) ? str : false })
+
+	label(for="demo-hide") Cсылки
+	input(type="checkbox", hidden,style="display:none;")#demo-hide
+	ul
+		each page in htmls
+			li
+				a(href="/#{page}")= page
+//
+//###DELETE ME end###
+//

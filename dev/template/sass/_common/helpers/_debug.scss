@@ -1,0 +1,19 @@
+@mixin debug($msg: null){
+  $self: &;
+  &:hover{
+    &:after{
+      display: inline-block;
+      padding: .5em;
+      font-size: 1rem;
+      color: red;
+      background: white;
+
+      @if($msg){
+        content: "#{$msg}"
+      }
+      @else{
+        content: "#{$self}"
+      }
+    }
+  }
+}
